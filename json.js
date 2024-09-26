@@ -87,7 +87,7 @@ function convert (JSONInput) {
     throw new Error('Invalid battery')
   }
 
-  return {
+  const output = {
     deviceName,
     deviceType,
     attributes: {
@@ -102,6 +102,8 @@ function convert (JSONInput) {
       ts,
     }
   }
+
+  return JSON.stringify(output)
 }
 
 const exists = (val, name) => {
